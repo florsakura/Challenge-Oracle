@@ -17,7 +17,7 @@
             <main id="hero">
                 <img id="inicio" src="img/logo.svg" alt="">
                 <div>
-                    <textarea name="inpTexto" id="inpTexto" cols="30" rows="10" placeholder=" ▲ Ingrese un texto aqui para ser Codificado ▲"></textarea>
+                    <textarea name="inpTexto" id="inpTexto" cols="30" rows="10" placeholder=" ▲ Ingrese el texto en minusculas y sin caracteres especiales ▲"></textarea>
                 </div>
                 <div>
                     <button id="boton1">Encriptar</button>
@@ -35,7 +35,7 @@
                     <img src="img/muneco.svg" alt="">
                     <div>
                         <p class="grande">Ningun mensaje fue<br>encontrado</p>
-                        <p id="mediano">Ingrese el texto que desee encriptar o <br>desencriptar</p>
+                        <p id="mediano">Ingrese el texto que desea encriptar o <br>desencriptar</p>
                     </div>
                     
                 </div>
@@ -137,9 +137,7 @@
             }
             if (a != 0) {
                 alert("El texto ingresado no puede tener mayusculas ni caracter especiales:  ");
-                input.value='';
-                input.focus();
-                textarea.value='';
+                limpiar();
             }
             puede=a;
         }
