@@ -120,7 +120,32 @@
     var guardar = [];
     var encrip = document.getElementById("encrip");
     var encript = document.getElementById("encript");
-
+ 
+    function valida(){
+        var puede;
+        for (let i = 0; i < texto.value.length; i++) {
+            var x = texto.value[i];
+            var ascii = x.charCodeAt(0);
+            var a=2;
+            var frase=[]; 
+            if ((96<ascii && ascii<123)) {
+                    a=0;                      
+            }else if (ascii == 32){
+                a=0;
+            }else{
+                a=1;
+            }
+            if (a != 0) {
+                alert("El texto ingresado no puede tener mayusculas ni caracter especiales:  ");
+                input.value='';
+                input.focus();  
+            }
+            puede=a;
+        }
+        if (puede==0) {
+            encriptar();
+        }
+    }
 
     function encriptar(){
         var frase=[];
@@ -196,7 +221,7 @@
     }
 
     var button1 = document.getElementById("boton1");
-    button1.onclick=encriptar;
+    button1.onclick=valida;
 
     var button2 = document.getElementById("boton2");
     button2.onclick=desEncriptar;
