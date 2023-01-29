@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <h1>Challenge Oracle-One</h1>
+    </header>
+    <div>
+        <section>
+            
+            <main id="hero">
+                <img id="inicio" src="img/logo.svg" alt="">
+                <div>
+                    <textarea name="inpTexto" id="inpTexto" cols="30" rows="10" placeholder=" ▲ Ingrese un texto aqui para ser Codificado ▲"></textarea>
+                </div>
+                <div>
+                    <button id="boton1">Encriptar</button>
+                    <button id="boton2">Desencriptar</button>
+                    <button id="boton4">Limpiar</button>
+                </div>
+                
+            </main>
+            <aside>
+                <div class="encriptar off" id="encrip">
+                    <p>Texto encriptado<p>
+                    <textarea name="cifrado" id="cifrado" cols="30" rows="10" placeholder=" ▼ Texto Cifrado ▼"></textarea> 
+                </div>
+                <div class="encriptar" id="encript">
+                    <img src="img/muneco.svg" alt="">
+                    <div>
+                        <p class="grande">Ningun mensaje fue<br>encontrado</p>
+                        <p id="mediano">Ingrese el texto que desee encriptar o <br>desencriptar</p>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button id="boton3">Copiar</button>
+                </div>
+            </aside>
+            
+        </section>
+        <footer>
+            <div>
+                <ul>
+                    <li><a href="https://github.com/florsakura"><img class="circulo" src="img/github.png" alt="logo github"></a></li>
+                    <li><a href="https://www.linkedin.com/in/florencia-salazar-iramain-499990263/"><img class="circulo" src="img/linkedin.png" alt="logo linkedin"></a></li> 
+                </ul>
+            </div>
+            <p id="absoluto">&copy; 2023 - Salazar Iramain Florencia S. | Oracle+AluraLatam</p>
+            
+        </footer>
+        <div class="container">
+            <div class="bubbles">
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:20;"></span>
+            </div>
+        </div>    
+        
+    </div>
+    <video muted autoplay loop>
+        <source src="video5.mp4" type="video/mp4">
+    </video>
+    
+</body>
+
+</html> 
+<script>
+    var input = document.getElementById("inpTexto");
+    input.focus();
+    var textarea= document.getElementById("cifrado");
+    var texto = input; 
+    var guardar = [];
+    var encrip = document.getElementById("encrip");
+    var encript = document.getElementById("encript");
+
+
+    function encriptar(){
+        var frase=[];
+        
+        for (let i = 0; i < texto.value.length; i++) {
+            if (texto.value[i]=='a') {
+                frase[i]="ai";
+                guardar[i]=frase[i];
+            }else if (texto.value[i]=='e') {
+                frase[i]="enter";
+                guardar[i]=frase[i];
+            }else if (texto.value[i]=='i') {
+                frase[i]="imes";
+                guardar[i]=frase[i];
+            }else if (texto.value[i]=='o') {
+                frase[i]="ober";
+                guardar[i]=frase[i];
+            }else if (texto.value[i]=='u') {
+                frase[i]="ufat";
+                guardar[i]=frase[i];
+            }else{
+                frase[i]=texto.value[i];
+                guardar[i]=frase[i];
+            }
+        }
+        encrip.classList.remove('off');
+        encript.classList.add('off');
+        textarea.value=frase.join('');
+    }
+
+    function desEncriptar(){
+        var textarea2= document.getElementById("cifrado");
+        var texto2 = textarea;
+        var desencriptado=[];
+        for (let i = 0; i < guardar.length; i++) {
+            if (guardar[i]=='ai') {
+                desencriptado[i]="a";
+            }else if (guardar[i]=='enter') {
+                desencriptado[i]="e";
+            }else if (guardar[i]=='imes') {
+                desencriptado[i]="i";
+            }else if (guardar[i]=='ober') {
+                desencriptado[i]="o";
+            }else if (guardar[i]=='ufat') {
+                desencriptado[i]="u";
+            }else{
+                desencriptado[i]=guardar[i];
+            }
+        }
+        textarea2.value=desencriptado.join('');
+    }
+
+    function copiarTexto(){
+        //Obtenemos el campo de texto.
+        var copiar = document.getElementById("cifrado");
+        //Selecionamos el campo de texto.
+        copiar.select();
+        copiar.setSelectionRange(0, 99999); //Rango para moviles.
+        //Copia aquello que se encuentra dentro del campo de texto.
+        navigator.clipboard.writeText(copiar.value);
+        
+        //Alerta de validación de la copia del texto.
+        alert("Se copio el texto:  " + copiar.value);
+        console.log(alert);
+    }
+
+    function limpiar(){
+        input.value='';
+        input.focus();
+        textarea.value='';
+        encrip.classList.add('off');
+        encript.classList.remove('off');
+    }
+
+    var button1 = document.getElementById("boton1");
+    button1.onclick=encriptar;
+
+    var button2 = document.getElementById("boton2");
+    button2.onclick=desEncriptar;
+
+    var button4 = document.getElementById("boton4");
+    button4.onclick=limpiar;
+
+    var button3 = document.getElementById("boton3");
+    button3.onclick=copiarTexto;
+</script>
