@@ -29,7 +29,7 @@
             <aside>
                 <div class="encriptar off" id="encrip">
                     <p>Texto encriptado<p>
-                    <textarea name="cifrado" id="cifrado" cols="30" rows="10" placeholder=" ▼ Texto Cifrado ▼"></textarea> 
+                    <textarea name="cifrado" id="cifrado" cols="30" rows="10" placeholder=" ▼ Texto Cifrado ▼" disabled="false"></textarea> 
                 </div>
                 <div class="encriptar" id="encript">
                     <img src="img/muneco.svg" alt="">
@@ -138,7 +138,8 @@
             if (a != 0) {
                 alert("El texto ingresado no puede tener mayusculas ni caracter especiales:  ");
                 input.value='';
-                input.focus();  
+                input.focus();
+                textarea.value='';
             }
             puede=a;
         }
