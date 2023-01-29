@@ -145,6 +145,36 @@
             encriptar();
         }
     }
+    
+    function validar(){
+        var puede;
+        for (let i = 0; i < texto.value.length; i++) {
+            var x = texto.value[i];
+            var ascii = x.charCodeAt(0);
+            var a=2;
+            var frase=[];
+            
+            if ((96<ascii && ascii<123)) {
+                    a=0;
+                        
+            }else if (ascii == 32){
+                a=0;
+                     
+
+            }else{
+                a=1;
+
+
+            }
+            if (a != 0) {
+                alert("El texto ingresado no puede tener mayusculas ni caracter especiales:  ");
+                limpiar();            }
+            puede=a;
+        }
+        if (puede==0) {
+            desEncriptar();
+        }
+    }
 
     function encriptar(){
         var frase=[];
@@ -236,7 +266,7 @@
     button1.onclick=valida;
 
     var button2 = document.getElementById("boton2");
-    button2.onclick=desEncriptar;
+    button2.onclick=validar;
 
     var button4 = document.getElementById("boton4");
     button4.onclick=limpiar;
