@@ -176,25 +176,38 @@
     }
 
     function desEncriptar(){
-        var textarea2= document.getElementById("cifrado");
-        var texto2 = textarea;
-        var desencriptado=[];
-        for (let i = 0; i < guardar.length; i++) {
-            if (guardar[i]=='ai') {
-                desencriptado[i]="a";
-            }else if (guardar[i]=='enter') {
-                desencriptado[i]="e";
-            }else if (guardar[i]=='imes') {
-                desencriptado[i]="i";
-            }else if (guardar[i]=='ober') {
-                desencriptado[i]="o";
-            }else if (guardar[i]=='ufat') {
-                desencriptado[i]="u";
-            }else{
-                desencriptado[i]=guardar[i];
+        var input = document.getElementById("inpTexto");
+            var texto = input;
+             var frase=[];
+            for (let i = 0; i < texto.value.length; i++) {
+                if ((texto.value[i]=='a') && (texto.value[i+1]=='i')) {
+                    frase[i]="a";
+                    guardar[i]=frase[i];
+                    i +=1;
+                }else if (texto.value[i]=='e' && texto.value[i+1]=='n' && texto.value[i+2]=='t' && texto.value[i+3]=='e' && texto.value[i+4]=='r')  {
+                    frase[i]="e";
+                    guardar[i]=frase[i];
+                    i += 4
+                }else if (texto.value[i]=='i' && texto.value[i+1]=='m' && texto.value[i+2]=='e' && texto.value[i+3]=='s') {
+                    frase[i]="i";
+                    guardar[i]=frase[i];
+                      i += 3
+                }else if (texto.value[i]=='o' && texto.value[i+1]=='b' && texto.value[i+2]=='e' && texto.value[i+3]=='r') {
+                    frase[i]="o";
+                    guardar[i]=frase[i];
+                      i += 3
+                }else if (texto.value[i]=='u' && texto.value[i+1]=='f' && texto.value[i+2]=='a' && texto.value[i+3]=='t') {
+                    frase[i]="u";
+                    guardar[i]=frase[i];
+                      i += 3
+                }else{
+                    frase[i]=texto.value[i];
+                    guardar[i]=frase[i];
+                }
             }
-        }
-        textarea2.value=desencriptado.join('');
+            encrip.classList.remove('off');
+            encript.classList.add('off');
+            textarea.value=frase.join('');
     }
 
     function copiarTexto(){
